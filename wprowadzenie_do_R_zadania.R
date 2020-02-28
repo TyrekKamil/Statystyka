@@ -19,6 +19,14 @@ zad5[x%%2==0] = 1 / x[x%%2==0]
 zad5_1 = format(x, scientific = FALSE)
 zad5_1
 
-# zadanie 6 #### do zrobienia
+# zadanie 6 ####
 zad6 = c(6, 3, 4, 5, 2, 3)
-order(zad6, decreasing = FALSE)
+zad6[order(zad6, decreasing = TRUE)]
+
+# zadanie 7 ####
+zad7 = c(-1.876, -1.123, -0.123, 0, 0.123, 1.123, 1.876)
+round(zad7, 2)
+sign(zad7)
+floor(zad7)
+
+# zadanie 8 ####
