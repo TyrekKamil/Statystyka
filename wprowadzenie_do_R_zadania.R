@@ -30,3 +30,30 @@ sign(zad7)
 floor(zad7)
 
 # zadanie 8 ####
+zad8_1 = c(1:100000000)
+zad8_czas1 <- Sys.time()
+zad8_2 = (zad8_1)^(1/2)
+zad8_czas2 <- Sys.time()
+zad8_czas3 = zad8_czas2 - zad8_czas1
+zad8_czas3
+zad8_3 = sqrt(zad8_1)
+zad8_czas4 = Sys.time()
+zad8_czas4 - zad8_czas2
+
+# zadanie 9 ####
+install.packages("schoolmath")
+library(schoolmath)
+## after install ##
+zad9_1 = primlist[primlist < 1000]
+zad9_2 = primlist[length(zad9_1)]
+zad9_3 = length(primlist[primlist > 100 & primlist < 500])
+
+# zadanie 10 ####
+zad10_1 = c('a', 'b')
+zad10_2 = c('1','2','3')
+zad10_3 = paste(rep(zad10_1, 3), rep(zad10_2), sep="")
+
+# zadanie 11 ####
+zad11_1 = c(1:30)
+zad11_2 = c("X", "Y", "Z")
+zad11_3 = paste(rep(zad11_1, 3), rep(zad11_2, 10), sep = ".")
