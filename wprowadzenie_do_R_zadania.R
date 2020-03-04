@@ -57,3 +57,10 @@ zad10_3 = paste(rep(zad10_1, 3), rep(zad10_2), sep="")
 zad11_1 = c(1:30)
 zad11_2 = c("X", "Y", "Z")
 zad11_3 = paste(rep(zad11_1, 3), rep(zad11_2, 10), sep = ".")
+
+# zadanie 12 ####
+install.packages("car")
+library(car)
+#zad12_1 =c("d", "b", "e", "d", "a", "e", "d", "b", "b", "d", "d", "d", "e", "d", "c", "d", "e", "b", "e", "b", "c", "d", "d", "c", "a", "c", "d", "b", "c", "b", "e", "a", "c", "a", "e", "a", "a", "b", "a", "c", "b", "c", "a", "c", "a", "b", "e", "a", "c", "c", "b", "e", "b", "d", "d", "a", "e", "c", "e", "c", "d", "d", "a", "d", "d", "c", "a", "d", "a", "b", "e", "e", "e", "a", "b", "b", "b", "e", "c", "d", "d", "c", "b", "d", "e", "b", "a", "c", "c", "a", "e", "a", "e", "a", "b", "c", "c", "e", "d", "c")
+zad12_1 = sample(c("a","b", "c", "d", "e"), 100, replace = TRUE)
+zad12_2 = recode(zad12_1, "c('a', 'b')='1'; c('c', 'd')='2'; c('e')='3'")
