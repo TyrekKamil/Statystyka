@@ -1,3 +1,5 @@
+library(e1071)
+
 # Zadanie 1 ###
 # 1.1
 ankieta <- read.table("http://ls.home.amu.edu.pl/data_sets/ankieta.txt", header = TRUE, check.rows=)
@@ -62,14 +64,51 @@ predkosc = c(0.9, 6.2, 2.1, 4.1, 7.3, 1.0, 4.6, 6.4, 3.8, 5.0, 2.7, 9.2, 5.9, 7.
 data.frame(cbind(liczebnosc = table(cut(predkosc, breaks = seq(0, 14, 2))),
                  procent = prop.table(table(cut(predkosc, breaks = seq(0, 14, 2))))))
 
+# 3.2
 hist(predkosc, 
      xlab = "Srednia predkosc wiatru", 
      main = "Rozkład empiryczny",
      probability = TRUE, 
      col = "lightgreen")
 rug(jitter(predkosc))
-lines(density(predkosc), lwd = 2)
+lines(density(predkosc), lwd = 2)`
 
 boxplot(predkosc, 
         ylab = "Srednia predkosc wiatru", 
         main = "Rozkład empiryczny")
+
+mean(predkosc)
+median(predkosc)
+sd(predkosc)
+sd(predkosc)/mean(predkosc)*100
+skewness(predkosc)
+kurtosis(predkosc)
+
+
+# Zadanie 4 ###
+wspolczynnik_zmiennosci <- function(x, na.rm = FALSE) {
+        if(is.numeric(x) == TRUE) {
+                
+                if(na.rm == TRUE) {
+                        
+                        x <- x[!is.na(x)]
+                        print
+                        sd <- sd(x)
+                        avg <- mean(x)
+                        V <- sd/avg
+                        return(V* 100)
+                        
+                } else {
+                        return(NA)
+                }
+        } else {
+                stop("argument nie jest liczbą")
+        }
+}
+
+
+x <- c(1, NA, 3)
+wspolczynnik_zmiennosci(x)
+wspolczynnik_zmiennosci(x, na.rm = TRUE)
+wspolczynnik_zmiennosci()
+wspolczynnik_zmiennosci(c("x", "y"))
